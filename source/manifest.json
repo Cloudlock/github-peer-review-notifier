@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Github Peer Review Notifier",
+  "version": "1.0",
+  "description": "This extension shows notification of pending code review requests for you to act upon.",
+  "icons":{
+    "48": "icon48.png",
+    "16": "icon16.png"
+  },
+  "browser_action": {
+    "default_icon": "icon16.png"
+  },
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },  
+  "permissions": [
+    "https://github.com/*",
+    "storage",
+    "notifications"
+  ]
+}
