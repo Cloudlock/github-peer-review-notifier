@@ -30,7 +30,8 @@ function generateUuid()
 }
 
 
-function sendNotification(title, message){
+function sendNotification(message){
+    var title = "Github Peer Review Notifier";
     var notifOptions = {
         type: "basic",
         iconUrl: "icon48.png",
@@ -75,14 +76,14 @@ function getReviewRequestCount(){
                 var request_count = stored_data.request_count;
                 if(request_count){
                     if(current_request_count > request_count){
-                        sendNotification("Github Code Review Request", "You have got new code review requests.");
+                        sendNotification("You have got new code review request.");
                     }
                     else{
 
                     }
                 }
                 else if(current_request_count > 0){
-                    sendNotification("Github Code Review Request", "You have pending code review requests.");
+                    sendNotification("You have pending code review requests.");
                 } 
 
                 updateBadgeCount(current_request_count.toString());
