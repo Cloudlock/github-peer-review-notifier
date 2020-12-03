@@ -100,6 +100,9 @@ function getReviewRequestCount(){
 
 function updateBadgeCount(open_request_count){
     console.log("updateBadgeCount triggered!");
+    if(open_request_count == '0'){
+        open_request_count = '';
+    }
     chrome.browserAction.setBadgeBackgroundColor({color:[255, 44, 51, 255]});
     chrome.browserAction.setBadgeText({text: open_request_count});
 }
